@@ -8,18 +8,18 @@ import { ethers } from 'hardhat';
 import log from './log';
 
 export enum Network {
-  BSC = 'bsc',
+  FTM = 'ftm',
 }
 
 const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
 
-const bscBaseTokens: Tokens = {
-  wbnb: { symbol: 'WBNB', address: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c' },
-  usdt: { symbol: 'USDT', address: '0x55d398326f99059ff775485246999027b3197955' },
-  busd: { symbol: 'BUSD', address: '0xe9e7cea3dedca5984780bafc599bd69add087d56' },
+const ftmBaseTokens: Tokens = {
+  wftm: { symbol: 'WFTM', address: '0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83' },
+  usdc: { symbol: 'USDC', address: '0x04068DA6C83AFCFA0e13ba15A6696662335D5B75' },
+  fusd: { symbol: 'FUSD', address: '0xad84341756bf337f5a0164515b1f6f993d194e1f' },
 };
 
-const bscQuoteTokens: Tokens = {
+const ftmQuoteTokens: Tokens = {
   eth: { symbol: 'ETH', address: '0x2170Ed0880ac9A755fd29B2688956BD959F933F8' },
   btcb: { symbol: 'BTCB', address: '0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c' },
   cake: { symbol: 'CAKE', address: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82' },
@@ -77,7 +77,7 @@ const bscQuoteTokens: Tokens = {
   pet: { symbol: 'PET', address: '0x4d4e595d643dc61ea7fcbf12e4b1aaa39f9975b8' },
 };
 
-const bscDexes: AmmFactories = {
+const ftmDexes: AmmFactories = {
   pancake: '0xBCfCcbde45cE874adCB698cC183deBcF17952812',
   mdex: '0x3CD1C46068dAEa5Ebb0d3f55F6915B10648062B8',
   bakery: '0x01bF7C66c6BD861915CdaaE475042d3c4BaE16A7',
@@ -87,8 +87,8 @@ const bscDexes: AmmFactories = {
 
 function getFactories(network: Network): AmmFactories {
   switch (network) {
-    case Network.BSC:
-      return bscDexes;
+    case Network.FTM:
+      return ftmDexes;
     default:
       throw new Error(`Unsupported network:${network}`);
   }
@@ -96,8 +96,8 @@ function getFactories(network: Network): AmmFactories {
 
 export function getTokens(network: Network): [Tokens, Tokens] {
   switch (network) {
-    case Network.BSC:
-      return [bscBaseTokens, bscQuoteTokens];
+    case Network.FTM:
+      return [ftmBaseTokens, ftmQuoteTokens];
     default:
       throw new Error(`Unsupported network:${network}`);
   }
