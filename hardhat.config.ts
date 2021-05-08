@@ -21,12 +21,12 @@ const config: HardhatUserConfig = {
         accountsBalance: '1000000000000000000000000', // 1 mil ether
       },
     },
-    bscTestnet: {
+    ftmTestnet: {
       url: FTM_Tetsnet_RPC,
       chainId: 0xfa2,
       accounts: [deployer.private],
     },
-    bsc: {
+    ftm: {
       url: FTM_RPC,
       chainId: 250,
       accounts: [deployer.private],
