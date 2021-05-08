@@ -6,7 +6,7 @@ interface Config {
   minimumProfit: number;
   gasPrice: BigNumber;
   gasLimit: BigNumberish;
-  bscScanUrl: string;
+  ftmScanUrl: string;
   concurrency: number;
 }
 
@@ -14,8 +14,8 @@ const contractAddr = '0xXXXXXXXXXXXXXXXXXXXXXX'; // flash bot contract address
 const gasPrice = utils.parseUnits('10', 'gwei');
 const gasLimit = 300000;
 
-const bscScanApiKey = 'XXXXXXXXXXXXXXXX'; // bscscan API key
-const bscScanUrl = `https://api.bscscan.com/api?module=stats&action=bnbprice&apikey=${bscScanApiKey}`;
+const ftmScanApiKey = 'XXXXXXXXXXXXXXXX'; // bscscan API key
+const ftmScanUrl = `https://api.ftmscan.com/api?module=stats&action=ftmprice&apikey=${ftmScanApiKey}`;
 
 const config: Config = {
   contractAddr: contractAddr,
@@ -24,7 +24,7 @@ const config: Config = {
   minimumProfit: 50, // in USD
   gasPrice: gasPrice,
   gasLimit: gasLimit,
-  bscScanUrl: bscScanUrl,
+  ftmScanUrl: ftmScanUrl,
 };
 
 export default config;
