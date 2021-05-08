@@ -70,9 +70,9 @@ function arbitrageFunc(flashBot: FlashBot, baseTokens: Tokens) {
 }
 
 async function main() {
-  const pairs = await tryLoadPairs(Network.BSC);
+  const pairs = await tryLoadPairs(Network.FTM);
   const flashBot = (await ethers.getContractAt('FlashBot', config.contractAddr)) as FlashBot;
-  const [baseTokens] = getTokens(Network.BSC);
+  const [baseTokens] = getTokens(Network.FTM);
 
   log.info('Start arbitraging');
   while (true) {
