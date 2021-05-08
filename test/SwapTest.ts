@@ -9,15 +9,15 @@ describe('Flashswap', () => {
   let weth: IWETH;
   let flashBot: FlashBot;
 
-  const WBNB = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c';
-  const USDT = '0x55d398326f99059ff775485246999027b3197955';
+  const WFTM = '0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83';
+  const USDC = '0x04068da6c83afcfa0e13ba15a6696662335d5b75';
 
   beforeEach(async () => {
-    const wethFactory = (await ethers.getContractAt('IWETH', WBNB)) as IWETH;
-    weth = wethFactory.attach(WBNB) as IWETH;
+    const wethFactory = (await ethers.getContractAt('IWETH', WFTM)) as IWETH;
+    weth = wethFactory.attach(WFTM) as IWETH;
 
     const fbFactory = await ethers.getContractFactory('FlashBot');
-    flashBot = (await fbFactory.deploy(WBNB)) as FlashBot;
+    flashBot = (await fbFactory.deploy(WFTM)) as FlashBot;
   });
 
   describe('flash swap arbitrage', () => {
@@ -37,9 +37,9 @@ describe('Flashswap', () => {
 
     before(async () => {
       [signer] = await ethers.getSigners();
-      mdexPairAddr = await mdexFactory.getPair(WBNB, USDT);
+      mdexPairAddr = await mdexFactory.getPair(WFTM, USDC);
       mdexPair = new ethers.Contract(mdexPairAddr, uniPairAbi, waffle.provider);
-      pancakePairAddr = await pancakeFactory.getPair(WBNB, USDT);
+      pancakePairAddr = await pancakeFactory.getPair(WFTM, USDC);
     });
 
     it('do flash swap between Pancake and MDEX', async () => {
@@ -65,7 +65,7 @@ describe('Flashswap', () => {
 
       const res = await flashBot.getProfit(mdexPairAddr, pancakePairAddr);
       expect(res.profit).to.be.gt(ethers.utils.parseEther('500'));
-      expect(res.baseToken).to.be.eq(WBNB);
+      expect(res.baseToken).to.be.eq(WFTM);
     });
 
     it('revert if callback is called from address without permission', async () => {
