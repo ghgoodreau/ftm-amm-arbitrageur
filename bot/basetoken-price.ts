@@ -6,26 +6,26 @@ import log from './log';
 
 const lock = new AsyncLock();
 
-let bnbPrice = 0;
+let ftmPrice = 0;
 
 // clear bnb price every hour
 setInterval(() => {
   lock
-    .acquire('bnb-price', () => {
-      bnbPrice = 0;
+    .acquire('ftm-price', () => {
+      ftmPrice = 0;
       return;
     })
     .then(() => {});
 }, 3600000);
 
-export async function getBnbPrice(): Promise<number> {
-  return await lock.acquire('bnb-price', async () => {
-    if (bnbPrice !== 0) {
-      return bnbPrice;
+export async function getFtmPrice(): Promise<number> {
+  return await lock.acquire('ftm-price', async () => {
+    if (ftmPrice !== 0) {
+      return ftmPrice;
     }
     const res = await axios.get(config.bscScanUrl);
-    bnbPrice = parseFloat(res.data.result.ethusd);
-    log.info(`BNB price: $${bnbPrice}`);
-    return bnbPrice;
+    ftmPrice = parseFloat(res.data.result.ethusd);
+    log.info(`FTM price: $${ftmPrice}`);
+    return ftmPrice;
   });
 }
