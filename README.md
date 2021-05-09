@@ -4,6 +4,11 @@ This is merely a port of his work to test on FTM - Fantom Network
 
 https://github.com/paco0x/amm-arbitrageur
 
+## Edit Bot Config
+
+Make sure to put FantomScan API Key in /bot/config.ts
+
+
 ## Deploy the contract
 1. Edit network config in `hardhat.config.ts`
 
