@@ -27,8 +27,9 @@ const ftmQuoteTokens: Tokens = {
 const ftmDexes: AmmFactories = {
   spooky: '0x152eE697f2E276fA89E96742e9bB9aB1F2E61bE3',
   spirit: '0xef45d134b73241eda7703fa787148d9c9f4950b0',
+  hyperjump: '0x991152411A7B5A14A8CF0cDDE8439435328070dF',        
   // doesn't work throws error sushi: '0xC0AEe478e3658e2610c5F7A4A2E1777cE9e4f2Ac',
-  // value: '0x1B8E12F839BD4e73A47adDF76cF7F0097d74c14C',
+  // value: ,
 };
 
 function getFactories(network: Network): AmmFactories {
