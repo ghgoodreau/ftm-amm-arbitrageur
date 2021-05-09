@@ -24,7 +24,7 @@ export async function getFtmPrice(): Promise<number> {
       return ftmPrice;
     }
     const res = await axios.get(config.ftmScanUrl);
-    ftmPrice = parseFloat(res.data.result.ethusd);
+    ftmPrice = parseFloat(res.data.result.ftmusd);
     log.info(`FTM price: $${ftmPrice}`);
     return ftmPrice;
   });
