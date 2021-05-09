@@ -47,6 +47,7 @@ $ yarn run bot
 
 - [SpiritSwap](https://spiritswap.finance/)
 - [SpookySwap](https://spookyswap.finance/)
+- [HyperJump](https://hyperjump.fi/)
 - [~~SushiSwap~~](https://app.sushiswap.com/)(Not supported)
 
 ## Run UT
