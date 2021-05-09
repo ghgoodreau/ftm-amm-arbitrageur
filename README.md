@@ -1,3 +1,8 @@
+## All Credit to https://github.com/paco0x
+
+This is merely a port of his work to test on FTM - Fantom Network
+
+https://github.com/paco0x/amm-arbitrageur
 
 ## Deploy the contract
 1. Edit network config in `hardhat.config.ts`
@@ -33,13 +38,11 @@ There already implemented a bot in typescript, to run it:
 $ yarn run bot
 ```
 
-## Available AMMs on BSC
+## Available AMMs on FTM (Using this) 
 
-- [PancakeSwap](https://pancakeswap.finance/)
-- [MDEX](https://bsc.mdex.com/)
-- [BakerySwap](https://www.bakeryswap.org/#/swap)
-- [JulSwap](https://julswap.com/#/)
-- [~~ValueDeFi~~](https://bsc.valuedefi.io/)(Not supported)
+- [SpiritSwap](https://spiritswap.finance/)
+- [SpookySwap](https://spookyswap.finance/)
+- [~~SushiSwap~~](https://app.sushiswap.com/)(Not supported)
 
 ## Run UT
 
