@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "prettier": "prettier --write 'contracts/**/*.sol'",
-    "bot": "hardhat run --network bsc bot/index.ts"
+    "bot": "hardhat run --network ftm bot/index.ts"
   },
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.0",
@@ -18,7 +18,7 @@
     "chai": "^4.3.4",
     "ethereum-waffle": "^3.0.0",
     "ethers": "^5.0.0",
-    "hardhat": "^2.1.2",
+    "hardhat": "^2.2.1",
     "prettier": "^2.2.1",
     "prettier-plugin-solidity": "^1.0.0-beta.7",
     "ts-generator": "^0.1.1",
