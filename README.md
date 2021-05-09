@@ -6,7 +6,7 @@ https://github.com/paco0x/amm-arbitrageur
 
 ## Edit Bot Config
 
-Make sure to put FantomScan API Key in /bot/config.ts
+Make sure to put FantomScan API Key in '/bot/config.ts'
 
 
 ## Deploy the contract
