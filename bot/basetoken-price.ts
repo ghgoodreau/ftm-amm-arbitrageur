@@ -23,7 +23,7 @@ export async function getFtmPrice(): Promise<number> {
     if (ftmPrice !== 0) {
       return ftmPrice;
     }
-    const res = await axios.get(config.bscScanUrl);
+    const res = await axios.get(config.ftmScanUrl);
     ftmPrice = parseFloat(res.data.result.ethusd);
     log.info(`FTM price: $${ftmPrice}`);
     return ftmPrice;
